@@ -11,17 +11,17 @@ DROP TABLE AdvertMedia
 
 CREATE TABLE AdvertMedia
 (
-	mediaId			INT NOT NULL IDENTITY(1,1),
-	fileName		VARCHAR(200) NOT NULL,
+	mediaId          INT NOT NULL IDENTITY(1,1),
+	fileName         VARCHAR(200) NOT NULL,
 	
 	PRIMARY KEY (mediaId)
 )
 
 CREATE TABLE AdvertCategory
 (
-	categoryId		INT NOT NULL IDENTITY(1,1),
-	name			VARCHAR(30) NOT NULL,
-	parent			INT NOT NULL, -- Parent category of the category, if this is NULL it means that it's the root category
+	categoryId      INT NOT NULL IDENTITY(1,1),
+	name            VARCHAR(30) NOT NULL,
+	parent          INT NOT NULL, -- Parent category of the category, if this is NULL it means that it's the root category
 	
 	PRIMARY KEY (categoryId),
 	
@@ -31,10 +31,10 @@ CREATE TABLE AdvertCategory
 
 CREATE TABLE Location
 (
-	locationId		INT NOT NULL IDENTITY(1,1),
-	name			VARCHAR(50) NOT NULL,
-	postalNr		SMALLINT NOT NULL,
-	parent			INT, -- Parent location of the location, if this is NULL it means that it's the root location
+	locationId      INT NOT NULL IDENTITY(1,1),
+	name            VARCHAR(50) NOT NULL,
+	postalNr        SMALLINT NOT NULL,
+	parent          INT, -- Parent location of the location, if this is NULL it means that it's the root location
 	
 	PRIMARY KEY (locationId),
 	
@@ -44,24 +44,24 @@ CREATE TABLE Location
 
 CREATE TABLE AdvertType
 (
-	typeId			INT NOT NULL IDENTITY(1,1),
-	typeName		VARCHAR(20),
+	typeId          INT NOT NULL IDENTITY(1,1),
+	typeName        VARCHAR(20),
 	
 	PRIMARY KEY (typeId)
 )
 
 CREATE TABLE Advert
 (
-	advertId		INT NOT NULL IDENTITY(1,1),
-	title			VARCHAR(50) NOT NULL,
-	creationdate	INT NOT NULL, -- Unix time
-	expiryDate		INT NOT NULL, -- Unix time
-	phoneNr			VARCHAR(20) NOT NULL,
-	mail			VARCHAR(254) NOT NULL, -- 254 is the max length of an email address
-	paid			BIT NOT NULL,
-	typeId			INT NOT NULL,
-	categoryId		INT NOT NULL,
-	locationId		INT NOT NULL,
+	advertId        INT NOT NULL IDENTITY(1,1),
+	title           VARCHAR(50) NOT NULL,
+	creationdate    INT NOT NULL, -- Unix time
+	expiryDate      INT NOT NULL, -- Unix time
+	phoneNr         VARCHAR(20) NOT NULL,
+	mail            VARCHAR(254) NOT NULL, -- 254 is the max length of an email address
+	paid            BIT NOT NULL,
+	typeId          INT NOT NULL,
+	categoryId      INT NOT NULL,
+	locationId      INT NOT NULL,
 	
 	PRIMARY KEY (advertId),
 	
@@ -77,8 +77,8 @@ CREATE TABLE Advert
 
 CREATE TABLE AdvertMediaAdvert
 (
-	advertId		INT NOT NULL,
-	mediaId			INT NOT NULL,
+	advertId        INT NOT NULL,
+	mediaId         INT NOT NULL,
 	
 	CONSTRAINT fk_advert FOREIGN KEY (advertId)
 	REFERENCES Advert (advertId),
@@ -89,20 +89,20 @@ CREATE TABLE AdvertMediaAdvert
 
 CREATE TABLE UserType
 (
-	typeId			INT NOT NULL IDENTITY(1,1),
-	name			VARCHAR(20) NOT NULL,
+	typeId          INT NOT NULL IDENTITY(1,1),
+	name            VARCHAR(20) NOT NULL,
 	
 	PRIMARY KEY (typeId)
 )
 
 CREATE TABLE "User"
 (
-	userId			INT NOT NULL IDENTITY(1,1),
-	name			VARCHAR(30) NOT NULL,
+	userId          INT NOT NULL IDENTITY(1,1),
+	name            VARCHAR(30) NOT NULL,
 	organizationNr  BIGINT NOT NULL, -- Organizations can have 12 numbers max in their organization number. Usually only 10.
-	telephone		VARCHAR(20) NOT NULL,
-	mail			VARCHAR(254) NOT NULL, -- 254 is the max length of an email address
-	typeId			INT NOT NULL,
+	telephone       VARCHAR(20) NOT NULL,
+	mail            VARCHAR(254) NOT NULL, -- 254 is the max length of an email address
+	typeId          INT NOT NULL,
 	
 	PRIMARY KEY (userId),
 	
