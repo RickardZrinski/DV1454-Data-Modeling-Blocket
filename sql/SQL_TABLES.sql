@@ -101,6 +101,8 @@ CREATE TABLE UserType
 CREATE TABLE "User"
 (
 	userId          INT NOT NULL IDENTITY(1,1),
+	username        VARCHAR(50) NOT NULL,
+	password        VARCHAR(50) NOT NULL,
 	name            VARCHAR(30) NOT NULL,
 	organizationNr  BIGINT, -- Organizations can have 12 numbers max in their organization number. Usually only 10.
 	telephone       VARCHAR(20) NOT NULL,
