@@ -18,66 +18,66 @@ INSERT INTO AdvertMedia VALUES ('1'),
 DELETE FROM Location
 INSERT INTO Location VALUES ('Blekinge', NULL),
                             ('Karlskrona', 1),
-                            ('Olofström', 1),
+                            ('Olofstrï¿½m', 1),
                             ('Karlshamn', 1),
                             ('Ronneby', 1),
-                            ('Sölvesborg', 1);
+                            ('Sï¿½lvesborg', 1);
                             
 INSERT INTO Location VALUES ('Kalmar', NULL),
                             ('Borgholm', 2),
                             ('Emmaboda', 2),
                             ('Hultsfred', 2),
-                            ('Högsby', 2),
+                            ('Hï¿½gsby', 2),
                             ('Kalmar', 2),
-                            ('Mönsterås', 2),
-                            ('Mörbylånga', 2),
+                            ('Mï¿½nsterï¿½s', 2),
+                            ('Mï¿½rbylï¿½nga', 2),
                             ('Nybro', 2),
                             ('Oskarshamn', 2),
-                            ('Torsås', 2),
+                            ('Torsï¿½s', 2),
                             ('Vimmerby', 2),
-                            ('Västervik', 2);
+                            ('Vï¿½stervik', 2);
 
 /* AdvertCategory */
 DELETE FROM AdvertCategory
 INSERT INTO AdvertCategory VALUES ('Fordon', NULL),
                                   ('Bilar', 1),
-                                  ('Bildelar & Biltillbehör', 1),
-                                  ('Båtar', 1),
-                                  ('Båtdelar & tillbehör', 1),
+                                  ('Bildelar & Biltillbehï¿½r', 1),
+                                  ('Bï¿½tar', 1),
+                                  ('Bï¿½tdelar & tillbehï¿½r', 1),
                                   ('Husvagnar & Husbilar', 1),
                                   ('Mopeder & A-traktor', 1),
                                   ('Motorcyklar', 1),
-                                  ('MC-delar & tillbehör', 1),
+                                  ('MC-delar & tillbehï¿½r', 1),
                                   ('Lastbil, Truck & Entreprenad', 1),
-                                  ('Skogs- & Lantbruks­maskiner', 1),
-                                  ('Snöskotrar', 1),
-                                  ('Snöskoterdelar & tillbehör', 1);
+                                  ('Skogs- & Lantbruksï¿½maskiner', 1),
+                                  ('Snï¿½skotrar', 1),
+                                  ('Snï¿½skoterdelar & tillbehï¿½r', 1);
                                   
 INSERT INTO AdvertCategory VALUES ('Elektronik', NULL),
                                   ('Datorer & TV-spel', 14),
                                   ('Ljud & Bild', 14),
-                                  ('Telefoner & Tillbehör', 14);
+                                  ('Telefoner & Tillbehï¿½r', 14);
                                   
-INSERT INTO AdvertCategory VALUES ('Stationära datorer', 15),
-                                  ('Bärbara datorer', 15),
+INSERT INTO AdvertCategory VALUES ('Stationï¿½ra datorer', 15),
+                                  ('Bï¿½rbara datorer', 15),
                                   ('Surfplattor', 15),
-                                  ('Datortillbehör & Program', 15),
+                                  ('Datortillbehï¿½r & Program', 15),
                                   ('PC-spel & Onlinespel', 15),
                                   ('TV-spel', 15),
-                                  ('Övrigt', 15);
+                                  ('ï¿½vrigt', 15);
 
 /* AdvertType */
 DELETE FROM AdvertType
-INSERT INTO AdvertType VALUES ('Säljes'),
-                              ('Köpes'),
-                              ('Önskar hyra'),
+INSERT INTO AdvertType VALUES ('Sï¿½ljes'),
+                              ('Kï¿½pes'),
+                              ('ï¿½nskar hyra'),
                               ('Uthyres'),
                               ('Bytes');
 
 /* UserType */
 DELETE FROM UserType
 INSERT INTO UserType VALUES ('Privat'),
-                            ('Företag');
+                            ('Fï¿½retag');
 
 /* User */
 DELETE FROM "User"
@@ -90,8 +90,8 @@ INSERT INTO "User" VALUES ('Rickard', NULL, '073-0616860', 'exempel@mail.se', 1)
 DELETE FROM Advert
 DECLARE @unixTimestamp AS INT = (SELECT DATEDIFF(s, '1970-01-01 00:00:00', GETUTCDATE()))
 
-INSERT INTO Advert VALUES ('Skrotig välfärdsvolvo till salu',
-                          'Stålet är utformat av Sveriges konung själv.',
+INSERT INTO Advert VALUES ('Skrotig vï¿½lfï¿½rdsvolvo till salu',
+                          'Stï¿½let ï¿½r utformat av Sveriges konung sjï¿½lv.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-0616830',
@@ -104,8 +104,19 @@ INSERT INTO Advert VALUES ('Skrotig välfärdsvolvo till salu',
                           2,
                           2)
                           
-INSERT INTO Advert VALUES ('"Åsa Romson"-båt till salu (komplett med illegal kopparbaserad färgbotten)',
-                          'Nu när jag sitter i Riksdagen måste jag bli av med den här skutan innan någon avslöjar mitt miljöförstörande.',
+INSERT INTO Advert VALUES ('"ï¿½sa Romson"-bï¿½t till salu (komplett med illegal kopparbaserad fï¿½rgbotten)',
+                          'Nu nï¿½r jag sitter i Riksdagen mï¿½ste jag bli av med den hï¿½r skutan innan nï¿½gon avslï¿½jar mitt miljï¿½fï¿½rstï¿½rande.',
+                          (@unixTimestamp),
+                          (@unixTimestamp + 2592000),
+                          '073-0616811',
+                          'exempel@riksdagen.se',
+                          0,
+                          1,
+                          3,
+                          2)
+
+INSERT INTO Advert VALUES ('"ï¿½sa Romson"-bï¿½t till salu (komplett med illegal kopparbaserad fï¿½rgbotten)',
+                          'Nu nï¿½r jag sitter i Riksdagen mï¿½ste jag bli av med den hï¿½r skutan innan nï¿½gon avslï¿½jar mitt miljï¿½fï¿½rstï¿½rande.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-0616811',
@@ -117,9 +128,34 @@ INSERT INTO Advert VALUES ('"Åsa Romson"-båt till salu (komplett med illegal kop
                           1,
                           3,
                           2)
+
+
+INSERT INTO Advert VALUES ('Gediget Modermodem frÃ¥n det ljuva 80-talet',
+                          'Jag sÃ¤ljer mitt gamla, men vÃ¤ldigt trofasta modermodem i brist pÃ¥ intresse, men framfÃ¶rallt fÃ¶r att jag skaffat katt',
+                          (@unixTimestamp),
+                          (@unixTimestamp + 2592000),
+                          '073-1337660',
+                          'rune@pcreparation.se',
+                          0,
+                          1,
+                          14,
+                          2)
+
+INSERT INTO Advert VALUES ('Hantverksservice fÃ¶r utbyte av dÃ¶rrfoder',
+                          'Jag och min kollega Ronny har lÃ¥ng erfarenhet av att byta dÃ¶rrfoder i hyreslÃ¤genheter. Uppbrytning av vardagsrumsgolv kan fÃ¶rekomma som medfÃ¶r extra kostnader',
+                          (@unixTimestamp),
+                          (@unixTimestamp + 2592000),
+                          '073-1337660',
+                          'rune@pcreparation.se',
+                          0,
+                          4,
+                          24,
+                          2)
+
+
                           
-INSERT INTO Advert VALUES ('Vi ändrar oss. Välfärden är till salu. Högsta budgivare vinner.',
-                          'Vi behöver lite extra pengar i partikassan efter valkampanjen.',
+INSERT INTO Advert VALUES ('Vi ï¿½ndrar oss. Vï¿½lfï¿½rden ï¿½r till salu. Hï¿½gsta budgivare vinner.',
+                          'Vi behï¿½ver lite extra pengar i partikassan efter valkampanjen.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-0616821',
@@ -132,8 +168,8 @@ INSERT INTO Advert VALUES ('Vi ändrar oss. Välfärden är till salu. Högsta budgiv
                           5,
                           4)
                           
-INSERT INTO Advert VALUES ('Alliansen: Energiföretag köpes. Gärna Nuon Energy. Gärna för 89 miljarder.',
-                          'Maud här. Vi i Alliansen vill göra en riktigt dålig affär. Även dålig publicitet är bra publicitet.',
+INSERT INTO Advert VALUES ('Alliansen: Energifï¿½retag kï¿½pes. Gï¿½rna Nuon Energy. Gï¿½rna fï¿½r 89 miljarder.',
+                          'Maud hï¿½r. Vi i Alliansen vill gï¿½ra en riktigt dï¿½lig affï¿½r. ï¿½ven dï¿½lig publicitet ï¿½r bra publicitet.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-061055022',
