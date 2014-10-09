@@ -21,7 +21,7 @@ CREATE TABLE AdvertCategory
 (
 	categoryId      INT NOT NULL IDENTITY(1,1),
 	name            VARCHAR(30) NOT NULL,
-	parent          INT NOT NULL, -- Parent category of the category, if this is NULL it means that it's the root category
+	parent          INT, -- Parent category of the category, if this is NULL it means that it's the root category
 	
 	PRIMARY KEY (categoryId),
 	
@@ -33,7 +33,6 @@ CREATE TABLE Location
 (
 	locationId      INT NOT NULL IDENTITY(1,1),
 	name            VARCHAR(50) NOT NULL,
-	postalNr        SMALLINT NOT NULL,
 	parent          INT, -- Parent location of the location, if this is NULL it means that it's the root location
 	
 	PRIMARY KEY (locationId),
@@ -53,7 +52,7 @@ CREATE TABLE AdvertType
 CREATE TABLE Advert
 (
 	advertId        INT NOT NULL IDENTITY(1,1),
-	title           VARCHAR(50) NOT NULL,
+	title           VARCHAR(100) NOT NULL,
 	creationdate    INT NOT NULL, -- Unix time
 	expiryDate      INT NOT NULL, -- Unix time
 	phoneNr         VARCHAR(20) NOT NULL,
@@ -99,7 +98,7 @@ CREATE TABLE "User"
 (
 	userId          INT NOT NULL IDENTITY(1,1),
 	name            VARCHAR(30) NOT NULL,
-	organizationNr  BIGINT NOT NULL, -- Organizations can have 12 numbers max in their organization number. Usually only 10.
+	organizationNr  BIGINT, -- Organizations can have 12 numbers max in their organization number. Usually only 10.
 	telephone       VARCHAR(20) NOT NULL,
 	mail            VARCHAR(254) NOT NULL, -- 254 is the max length of an email address
 	typeId          INT NOT NULL,
