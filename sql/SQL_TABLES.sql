@@ -53,6 +53,7 @@ CREATE TABLE Advert
 (
 	advertId        INT NOT NULL IDENTITY(1,1),
 	title           VARCHAR(100) NOT NULL,
+	description     TEXT,
 	creationdate    INT NOT NULL, -- Unix time
 	expiryDate      INT NOT NULL, -- Unix time
 	phoneNr         VARCHAR(20) NOT NULL,

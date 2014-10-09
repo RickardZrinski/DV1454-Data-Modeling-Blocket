@@ -91,6 +91,7 @@ DELETE FROM Advert
 DECLARE @unixTimestamp AS INT = (SELECT DATEDIFF(s, '1970-01-01 00:00:00', GETUTCDATE()))
 
 INSERT INTO Advert VALUES ('Skrotig välfärdsvolvo till salu',
+                          'Stålet är utformat av Sveriges konung själv.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-0616830',
@@ -101,6 +102,7 @@ INSERT INTO Advert VALUES ('Skrotig välfärdsvolvo till salu',
                           2)
                           
 INSERT INTO Advert VALUES ('"Åsa Romson"-båt till salu (komplett med illegal kopparbaserad färgbotten)',
+                          'Nu när jag sitter i Riksdagen måste jag bli av med den här skutan innan någon avslöjar mitt miljöförstörande.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-0616811',
@@ -111,6 +113,7 @@ INSERT INTO Advert VALUES ('"Åsa Romson"-båt till salu (komplett med illegal kop
                           2)
                           
 INSERT INTO Advert VALUES ('Vi ändrar oss. Välfärden är till salu. Högsta budgivare vinner.',
+                          'Vi behöver lite extra pengar i partikassan efter valkampanjen.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-0616821',
@@ -121,6 +124,7 @@ INSERT INTO Advert VALUES ('Vi ändrar oss. Välfärden är till salu. Högsta budgiv
                           4)
                           
 INSERT INTO Advert VALUES ('Alliansen: Energiföretag köpes. Gärna Nuon Energy. Gärna för 89 miljarder.',
+                          'Maud här. Vi i Alliansen vill göra en riktigt dålig affär. Även dålig publicitet är bra publicitet.',
                           (@unixTimestamp),
                           (@unixTimestamp + 2592000),
                           '073-061055022',
@@ -128,7 +132,7 @@ INSERT INTO Advert VALUES ('Alliansen: Energiföretag köpes. Gärna Nuon Energy. G
                           0,
                           1,
                           5,
-                          4)                          
+                          4) 
 
 /* AdvertMediaAdvert */
 DELETE FROM AdvertMediaAdvert
