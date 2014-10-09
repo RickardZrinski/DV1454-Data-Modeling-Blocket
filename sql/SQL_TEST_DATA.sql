@@ -81,10 +81,10 @@ INSERT INTO UserType VALUES ('Privat'),
 
 /* User */
 DELETE FROM "User"
-INSERT INTO "User" VALUES ('Rickard', NULL, '073-0616860', 'exempel@mail.se', 1),
-                          ('Martin', NULL, '070-2318232', 'exempel2@mail.se', 1),
-                          ('Pol', NULL, '071-4343443', 'exempel3@mail.se', 1),
-                          ('BTH', 2021004011, '0455385000', 'exempel4@bth.se', 2);
+INSERT INTO "User" VALUES ('Rickard', 'Rille', 'passw0rd', NULL, '073-0616860', 'exempel@mail.se', 1),
+                          ('Martin', 'Tagert', 'paaaaass', NULL, '070-2318232', 'exempel2@mail.se', 1),
+                          ('Pol', 'Leo-LaPol', 'pass', NULL, '071-4343443', 'exempel3@mail.se', 1),
+                          ('BTH', 'bth', 'secret_pass', 2021004011, '0455385000', 'exempel4@bth.se', 2);
 
 /* Advert */
 DELETE FROM Advert
