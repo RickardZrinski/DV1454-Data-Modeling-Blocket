@@ -97,6 +97,9 @@ INSERT INTO Advert VALUES ('Skrotig välfärdsvolvo till salu',
                           '073-0616830',
                           'exempel@bth.se',
                           0,
+                          1000,
+                          1000,
+                          29333,
                           1,
                           2,
                           2)
@@ -108,6 +111,9 @@ INSERT INTO Advert VALUES ('"Åsa Romson"-båt till salu (komplett med illegal kop
                           '073-0616811',
                           'exempel@riksdagen.se',
                           0,
+                          1500,
+                          1500,
+                          29741,
                           1,
                           3,
                           2)
@@ -119,6 +125,9 @@ INSERT INTO Advert VALUES ('Vi ändrar oss. Välfärden är till salu. Högsta budgiv
                           '073-0616821',
                           'jonas@riksdagen.se',
                           0,
+                          2000,
+                          2500,
+                          37451,
                           1,
                           5,
                           4)
@@ -130,9 +139,12 @@ INSERT INTO Advert VALUES ('Alliansen: Energiföretag köpes. Gärna Nuon Energy. G
                           '073-061055022',
                           'alliansen@riksdagen.se',
                           0,
-                          1,
+                          NULL,
+                          NULL,
+                          29444,
+                          2,
                           5,
-                          4) 
+                          4)
 
 /* AdvertMediaAdvert */
 DELETE FROM AdvertMediaAdvert

@@ -59,6 +59,9 @@ CREATE TABLE Advert
 	phoneNr         VARCHAR(20) NOT NULL,
 	mail            VARCHAR(254) NOT NULL, -- 254 is the max length of an email address
 	paid            BIT NOT NULL,
+	price           INT,
+	oldPrice        INT,
+	postalNr        INT NOT NULL,
 	typeId          INT NOT NULL,
 	categoryId      INT NOT NULL,
 	locationId      INT NOT NULL,
